@@ -1,0 +1,73 @@
+
+<!doctype html>
+<html class="no-js">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>我的预约信息</title>
+      <meta name="description" content="预约取号">
+      <meta name="keywords" content="预约取号，你值得拥有">
+      <meta name="apple-mobile-web-app-title" content="预约取号，你值得拥有！" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui, user-scalable=no">
+      <meta name="renderer" content="webkit">
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <meta http-equiv="Cache-Control" content="no-siteapp" />
+      <link rel="stylesheet" href="css/qh.css">
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/remove_title.js"></script>
+	<script type="text/javascript" src="order/js/scrollpagination.js"></script>
+	<script type="text/javascript">
+		$(function(){
+        	$('.container').scrollPagination({
+        		'contentPage': '/mortgage/booking/v/page?currPage=',
+        		'contentData': {"pageSize":10,"sid":'e1c3c33e10694e78d3fc1a84501fb3af',"deviceId":'7c131f5f9425e7ad3fcd5f745583cc79'},
+        		'scrollTarget': $(window),
+        		'heightOffset': 10,
+        		'beforeLoad': function(){
+        			$('.loading').fadeIn();	
+        		},
+        		'afterLoad': function(elementsLoaded){
+        		 	 if(elementsLoaded.length==0){
+                     	$(".loading").html("没有更多信息了");
+                     }
+        			 $('.loading').fadeOut();
+        			 var i = 0;
+        			 $(elementsLoaded).fadeInWithDelay();
+        		}
+        	});
+        	$.fn.fadeInWithDelay = function(){
+        		var delay = 0;
+        		return this.each(function(){
+        			$(this).delay(delay).animate({opacity:1}, 200);
+        			delay += 100;
+        		});
+        	};
+        });
+	</script>
+    </head>
+    <body>
+      <div class="header1">
+        <div onclick="window.location.href='index.html'" class="icon-back"></div>
+        <div class="titles1">我的预约信息</div>
+        <div class="refresh" onclick="window.location.href='#'" title="新增">
+        	<img src="images/add.png" class="reimg">
+        </div>
+      </div>
+	      <div class="header1 sele11">
+	        <a href="#"><div class="fl2 opt1 state2">立即取号</div></a>
+	        <div class="fl2 opt3">&nbsp;</div>
+	        <a href="#"><div class="fr2 opt2 state1">取号记录</div></a>
+	        <div class="clear"></div>
+	      </div>
+      <div class="space2"></div>
+      <div class="space2"></div>
+      <div class="container">
+		
+	  </div>
+		<div align="center" style="padding-top:50px;color:#ccc;">
+		您还没有预约信息
+		</div>
+    </body>
+</html>

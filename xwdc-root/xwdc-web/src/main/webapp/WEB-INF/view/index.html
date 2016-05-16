@@ -1,0 +1,668 @@
+<!doctype html>
+<html class="no-js">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>立即取号</title>
+<meta name="description" content="预约取号">
+<meta name="keywords" content="预约取号，你值得拥有">
+<meta name="apple-mobile-web-app-title" content="预约取号，你值得拥有！" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui, user-scalable=no">
+<meta name="renderer" content="webkit">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="stylesheet" href="qh.css">
+</head>
+<body onload="getAuthCode('authCode');refreshTake()">
+	<form name="myform" id="myform" action="" method="post">
+		<input type="hidden" name="isTake" value="0"> <input
+			type="hidden" name="tag"> <input type="hidden" name="sele">
+		<input type="hidden" name="title"> <input type="hidden"
+			name="sid" name="sid" value="e1c3c33e10694e78d3fc1a84501fb3af">
+		<input type="hidden" name="deviceId" name="deviceId"
+			value="7c131f5f9425e7ad3fcd5f745583cc79http://wx.anjbo.com/mortgage/booking/v/edit?id=0">
+		<input type="hidden" name="id" value="0"> <input type="hidden"
+			name="bookingType" value="-1060"> <input type="hidden"
+			name="szItemNo" value="FZ20150730"> <input type="hidden"
+			name="unitType" value="1"> <input type="hidden"
+			name="bookingSzAreaOid" value=""> <input type="hidden"
+			name="registrationAreaOid" value="1"> <input type="hidden"
+			name="proveType" value=""> <input type="hidden"
+			name="certificateType" value="1"> <input type="hidden"
+			name="houseName" value=""> <input type="hidden"
+			name="proveCode" value=""> <input type="hidden"
+			name="personName" value=""> <input type="hidden"
+			name="phoneNumber" value=""> <input type="hidden"
+			name="certificateNo" value=""> <input type="hidden"
+			id="workDay" name="workDay" value=""> <input type="hidden"
+			id="workDayLabel" name="workDayLabel" value=""> <input
+			type="hidden" id="workTimeSoltOid" name="workTimeSoltOid" value="">
+		<input type="hidden" id="workTimeSoltName" name="workTimeSoltName"
+			value=""> <input type="hidden" id="tdIndex" name="tdIndex"
+			value=""> <input type="hidden" name="fzFileNo" value="">
+
+		<input type="hidden" id="verificationcodereg"
+			name="verificationcodereg" value="">
+
+		<div class="header1">
+			<a
+				href="/mortgage/booking/v/list?sid=e1c3c33e10694e78d3fc1a84501fb3af&deviceId=7c131f5f9425e7ad3fcd5f745583cc79http://wx.anjbo.com/mortgage/booking/v/edit?id=0"
+				class="icon-back"></a>
+			<div class="titles3">新增预约</div>
+		</div>
+		<div class="space2"></div>
+		<div class="header-b">
+			<div class="fl change-ver">
+				<a href="#" class="fl ph-ver">手机版</a> <a onclick="statistics('7-3')"
+					target="_blank"
+					href="http://onlinebook.szreorc.com:8888/onlinebook/"
+					class="fl or-ver">原版</a>
+				<div class="clear"></div>
+			</div>
+			<a href="#" class="fr ord-record">预约记录</a>
+			<div class="clear"></div>
+		</div>
+		<div class="item0">
+			<div class="itte1">
+				<a href="#">
+					<div class="line1 pdtb">
+						<span class="infos1 fl">选择申办事项</span> <span class="infos2 fr">
+							领取不动产权证书及登... &gt;</span>
+						<div class="clear"></div>
+					</div>
+				</a>
+				<!--注销抵押事项小类-->
+				<!--注销抵押事项小类-->
+				<a href="#">
+					<div class="line1 pdtb">
+						<span class="infos1 fl">办理登记点</span> <span class="infos2 fr">
+							第一直属登记科 &gt;</span>
+						<div class="clear"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="choose-time">选择预约时间</div>
+		<div id="content" align="center">
+			<table class="tblss" cellpadding=0 cellspacing=1>
+				<tr>
+					<th><a href="javascript:void(0)" onclick="refreshTake()"
+						class="refresh-a">刷新</a></th>
+					<th id="workDay_1">2016-04-05<br>(星期二)
+					</th>
+					<th id="workDay_2">2016-04-06<br>(星期三)
+					</th>
+					<th id="workDay_3">2016-04-07<br>(星期四)
+					</th>
+					<th id="workDay_4">2016-04-08<br>(星期五)
+					</th>
+					<th id="workDay_5">2016-04-11<br>(星期一)
+					</th>
+				</tr>
+				<tr>
+					<th>09:00-10:00</th>
+					<td class="td" id="td1">约满</td>
+					<td class="td" id="td2">约满</td>
+					<td class="td" id="td3">约满</td>
+					<td class="td" id="td4">约满</td>
+					<td class="td" id="td5">约满</td>
+				</tr>
+				<tr>
+					<th>10:00-11:00</th>
+					<td class="td" id="td6">约满</td>
+					<td class="td" id="td7">约满</td>
+					<td class="td" id="td8">约满</td>
+					<td class="td" id="td9">约满</td>
+					<td class="td" id="td10">约满</td>
+				</tr>
+				<tr>
+					<th>11:00-12:00</th>
+					<td class="td" id="td11">约满</td>
+					<td class="td" id="td12">约满</td>
+					<td class="td" id="td13">约满</td>
+					<td class="td" id="td14">约满</td>
+					<td class="td" id="td15">约满</td>
+				</tr>
+				<tr>
+					<th>14:00-15:00</th>
+					<td class="td" id="td16">约满</td>
+					<td class="td" id="td17">约满</td>
+					<td class="td" id="td18">约满</td>
+					<td class="td" id="td19">约满</td>
+					<td class="td" id="td20">约满</td>
+				</tr>
+				<tr>
+					<th>15:00-16:00</th>
+					<td class="td" id="td21">约满</td>
+					<td class="td" id="td22">约满</td>
+					<td class="td" id="td23">约满</td>
+					<td class="td" id="td24">约满</td>
+					<td class="td" id="td25"><a
+						onclick="take(this,'2016-04-11','2016-04-11 (星期一)','-1324','15:00-16:00')"
+						href="javascript:void(0)">40/41</a></td>
+				</tr>
+				<tr>
+					<th>16:00-17:00</th>
+					<td class="td" id="td26">约满</td>
+					<td class="td" id="td27">约满</td>
+					<td class="td" id="td28">约满</td>
+					<td class="td" id="td29">约满</td>
+					<td class="td" id="td30"><a
+						onclick="take(this,'2016-04-11','2016-04-11 (星期一)','-1325','16:00-17:00')"
+						href="javascript:void(0)">0/41</a></td>
+				</tr>
+			</table>
+		</div>
+		<div class="item1">
+			<div class="itte1">
+				<a name="bookingSzAreaOid"></a> <a
+					href="javascript:sele('bookingSzAreaOid','','选择房地产所在地')">
+					<div class="line1 pdtb">
+						<span class="infos1 fl">房地产所在地</span> <span class="infos2 fr">请选择&nbsp;&nbsp;&gt;</span>
+						<div class="clear"></div>
+					</div>
+				</a>
+				<div class="line1 pdtb">
+					<span class="infos1 fl">文号</span>
+					<div placeholder="请输入（字母大写）" class="placeholder infos2"
+						v="fzFileNo" contenteditable="true" style="margin-right: 17px;"></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="item1">
+			<div class="itte1">
+				<div class="line1 pdtb">
+					<span class="infos1 fl">申请人真实姓名</span>
+					<div placeholder="请输入" class="placeholder infos2" v="personName"
+						contenteditable="true" style="margin-right: 17px;"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="line1 pdtb">
+					<span class="infos1 fl">手机号</span>
+					<div placeholder="请输入" class="placeholder infos2" v="phoneNumber"
+						contenteditable="true" style="margin-right: 17px;"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="line1 pdtb">
+					<span class="infos1 fl certificate">二代身份证号</span>
+					<div placeholder="请输入（证件字母大写）" class="placeholder infos2"
+						v="certificateNo" contenteditable="true"
+						style="margin-right: 17px;"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="line1 pdtb">
+					<span class="infos1 fl"><a href=""></a> <img id="authCode" class="yz-img"
+						alt="验证码" src="" onclick="getAuthCode(this)">
+					</span>
+					<div placeholder="请输入验证码" class="placeholder infos2"
+						v="verificationcodereg" contenteditable="true"
+						style="margin-right: 17px;"></div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div class="buttom">
+			<a href="javascript:void(0)" onclick="save(0)" class="fl xyb-a">保存信息</a>
+			&nbsp;&nbsp;<a href="javascript:void(0)" onclick="save(1)"
+				class="fr xyb">立即预约</a>
+		</div>
+		<div class="clear"></div>
+		<div class="space3"></div>
+	</form>
+</body>
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<script src="utils.js"></script>
+<script src="remove_title.js"></script>
+<script type="text/javascript">
+	var tdIndex = $("#tdIndex").val();
+	if (tdIndex != "") {
+		var a = $("#" + tdIndex).children("a");
+		if (a.attr("href") == null) {
+			$("#workDay").val('');
+			$("#workDayLabel").val('');
+			$("#workTimeSoltOid").val('');
+			$("#workTimeSoltName").val('');
+			$("#tdIndex").val('');
+		} else {
+			$("#" + tdIndex).css({
+				"color" : "#fff",
+				"background-color" : "#33C2C3"
+			});
+			a.css({
+				"color" : "#fff",
+				"background-color" : "#33C2C3"
+			});
+		}
+	}
+	$(".placeholder").focus(function() {
+		$(this).attr("srcval", $(this).text());
+	});
+	$(".placeholder").blur(function() {
+		var obj = $(this);
+		if ($.trim(obj.text()) == "") {
+			obj.empty();
+		} else {
+			if (obj.hasClass("price") && !isPrice(obj.text())) {
+				alert("请输入有效值");
+				obj.text(obj.attr("srcval"));
+				return;
+			}
+			$("input[name='" + obj.attr("v") + "']").val(obj.text());
+		}
+	});
+	$(".fr").each(function() {
+		if ($(this).html() == '') {
+			$(this).html('请输入');
+		}
+	});
+	$(".fr").live("click keydown", function() {
+		if ($(this).html() == '请输入') {
+			$(this).empty();
+		}
+		$(this).focus();
+	});
+	$(".fr").blur(function() {
+		var obj = $(this);
+		var name = obj.attr("v");
+		var text = obj.text();
+		if (obj.find("span").length > 0) {
+			text = obj.find("span").text();
+		} else if (obj.find("a").length > 0) {
+			text = obj.find("a").text();
+		}
+		if (text == '') {
+			obj.html('请输入');
+			$("input[name='" + name + "']").val('');
+		} else if (text != '请输入') {
+			$("input[name='" + name + "']").val(text);
+		}
+	});
+	function take(obj, workDay, workDayLabel, workTimeSoltOid, workTimeSoltName) {
+		$("#workDay").val(workDay);
+		$("#workDayLabel").val(workDayLabel);
+		$("#workTimeSoltOid").val(workTimeSoltOid);
+		$("#workTimeSoltName").val(workTimeSoltName);
+		$(".td").attr("style", "background:white;");
+		$(".td a").attr("style", "color:#f4ad49;");
+
+		$(obj).parent().css({
+			"color" : "#fff",
+			"background-color" : "#33C2C3"
+		});
+		$(obj).css({
+			"color" : "#fff",
+			"background-color" : "#33C2C3"
+		});
+		$("#tdIndex").val($(obj).parent().attr("id"));
+	}
+	function submit() {
+		var workDay = $("#workDay").val();
+		var workDayLabel = $("#workDayLabel").val();
+		var workTimeSoltOid = $("#workTimeSoltOid").val();
+		var workTimeSoltName = $("#workTimeSoltName").val();
+		if (workDay == "" || workDayLabel == "" || workTimeSoltOid == ""
+				|| workTimeSoltName == "") {
+			alert("请选择预约时间");
+			return;
+		}
+		showdiv("<img src='/loding.gif'><br><span style='color:#b8adb1'>正在预约，请稍等...</span>");
+		$.ajax({
+			url : "/mortgage/booking/v/submit",
+			data : $("#myform").serialize(),
+			dataType : "json",
+			success : function(data) {
+				hidediv(" ");
+				if (data.code == "SUCCESS") {
+					alert("预约成功");
+					window.location.href = "#";
+				} else {
+					var err = data.msg;
+					if (data.code == "FAIL") {
+						err = "预约失败，请稍后再试";
+					}
+					alert(err);
+				}
+			}
+		});
+	}
+	function refreshTake() {
+	//	showdiv("<img src='/loding.gif'><br><span style='color:#b8adb1'>正在刷新，请稍等...</span>");
+		$("#error").removeAttr("style");
+		$("#workDay").val('');
+		$("#workDayLabel").val('');
+		$("#workTimeSoltOid").val('');
+		$("#workTimeSoltName").val('');
+		var sid = $("input[name='sid']").val();
+		var deviceId = $("input[name='deviceId']").val();
+		var bookingType = $("input[name='bookingType']").val();
+		var registrationAreaOid = $("input[name='registrationAreaOid']").val();
+		
+		var jsondata = {
+			"bookingType" : bookingType,
+			"registrationAreaOid" : registrationAreaOid
+		}
+		var element = new Array(5);	  //工作日数组
+		
+		//获取工作日
+		$.ajax({
+			url : "http://localhost:8080/xwdc-web/getWorkDay",
+			type : "POST",
+			dataType : "json",
+			contentType: "application/json; charset=utf-8",
+			data : JSON.stringify(jsondata),
+
+			success : function(data) {
+				/* if (htmlContent.substring(0, 5) == "<span") {
+					hidediv(" ");
+					$("#error").html(htmlContent);
+				} else {
+					hidediv("<span style='color:#b8adb1;'>刷新成功</span>");
+					$("#content").html(htmlContent);
+				}
+				$("#error").fadeOut(1000); */
+				if  ("10000" == data.head.code){
+					
+					for(var key in data.param.workDay){
+						var i= key.split("_")[1];
+						element[i-1] = document.getElementById("workDay_" + i);
+						element[i-1].innerHTML = data.param.workDay[key].substring(0,10) + "<br>" + eval("'" + data.param.workDay[key].substring(11,31) + "'");
+					}
+				}
+				if("E0008" == data.head.code){
+					alert(data.head.msg);
+				}
+			}
+		});
+		
+		//获取每个工作日各个时间段预约的状态信息
+		$.ajax({
+			url : "http://localhost:8080/xwdc-web/getBookData",
+			type : "POST",
+			dataType : "json",
+			contentType: "application/json; charset=utf-8",
+			data : JSON.stringify(jsondata),
+
+			success : function(data) {
+				if  ("10000" == data.head.code){
+					setWorkday(element, data);
+				}
+				
+				if("E0007" == data.head.code){
+					alert(data.head.msg);
+				}
+			}
+		});
+	}
+	
+	//设置工作日的状态信息
+	function setWorkday(element, data){
+		
+		//记录获取了已约人数的位置;
+		var has_value = new Array(30);
+		//已预约人数
+		for(var key in data.param.bookData){
+			//时间段判断
+			var value = getValue(key.substring(15,26));
+			for(var i=0; i<5; i++){
+				//日期比对
+				if(element[i].innerHTML.substring(0,10) == key.substring(4,14)){
+					has_value[i+value] = 1;
+					var tb_element = document.getElementById("td" + (i+1+value));
+					tb_element.innerHTML = data.param.bookData[key];
+				}
+			}
+		}
+		
+		for(var i=0; i<30; i++){
+			if(has_value[i] != 1){
+				var tb_element = document.getElementById("td" + (i+1));
+				tb_element.innerHTML = 0;
+			}
+		}
+		
+	
+		//总人数
+		for(var key in data.param.bookCountInfo){
+			var bookInfo = data.param.bookCountInfo[key].split(",");
+			var value = getValue(bookInfo[2]);
+			
+			for(var i=value; i<(5+value); i++){
+				var tb_element = document.getElementById("td" + (i+1));
+				var workDay = document.getElementById("workDay_" + (i%5+1));
+				workDay = workDay.innerHTML.replace("<br>"," ");
+				
+				var currentDate = new Date();
+				var sysDate = new Date(currentDate.getFullYear(), currentDate.getMonth()+1, currentDate.getDate());
+				var work_Date = workDay.split(" ")[0].split("-");
+				var work_Date_A = new Date(work_Date[0], work_Date[1], work_Date[2]);
+				
+				var time = (currentDate.getHours()<10) ? ("0"+currentDate.getHours()+":00") : (currentDate.getHours()+":00");
+				
+				if(sysDate.getTime() >= work_Date_A.getTime() && time >= bookInfo[2].split("-")[1]){
+					tb_element.innerHTML = "已结束";
+				}else if(tb_element.innerHTML == bookInfo[1]){
+					tb_element.innerHTML = "已满";
+				}else{
+					var a = document.createElement("a");
+					a.onclick = function(){
+						take(this, workDay.split(" ")[0], workDay, bookInfo[0], bookInfo[2]);
+					}
+					a.href = "javascript:void(0)";
+					a.innerHTML = tb_element.innerHTML + "/" +bookInfo[1];
+					tb_element.innerHTML = "";
+					tb_element.appendChild(a);
+				}
+			}
+			
+		}
+	}
+	
+	//时间段比对
+	function getValue(date){
+		var value = 0;
+		
+		if("09:00-10:00" == date){
+			value = 5 * 0;
+		}
+		if("10:00-11:00" == date){
+			value = 5 * 1;
+		}
+		if("11:00-12:00" == date){
+			value = 5 * 2;
+		}
+		if("14:00-15:00" == date){
+			value = 5 * 3;
+		}
+		if("15:00-16:00" == date){
+			value = 5 * 4;
+		}
+		if("16:00-17:00" == date){
+			value = 5 * 5;
+		}
+		return value;
+	}
+	
+	function sele(tag, sele, title) {
+		$("input[name='tag']").val(tag);
+		$("input[name='sele']").val(sele);
+		$("input[name='title']").val(title);
+		window.myform.action = "/mortgage/booking/v/sele";
+		window.myform.submit();
+	}
+	function save(isTake) {
+		var bookingType = $("input[name='bookingType']").val();
+		var szItemNo = $("input[name='szItemNo']").val();
+		if (bookingType == "" || szItemNo == "") {
+			alert("请选择申办事项");
+			return;
+		}
+		if (szItemNo == "30156000169555062213440300") {
+			var isXL = $("input[name='isXL']:checked").val();
+			if (isXL != 1 && isXL != 2) {
+				alert("请选择注销抵押事项小类");
+				return;
+			}
+		}
+		var bookingSzAreaOid = $("input[name='bookingSzAreaOid']").val();
+		if (bookingSzAreaOid == "") {
+			alert("请选择房地产所在地");
+			return;
+		}
+		var regibookInfoationAreaOid = $("input[name='registrationAreaOid']").val();
+		if (registrationAreaOid == "") {
+			alert("请选择办理登记点");
+			return;
+		}
+		if (bookingType == "-1060") {
+			var fzFileNo = $("input[name='fzFileNo']").val();
+			if (fzFileNo == "") {
+				alert("请输入文号");
+				return;
+			}
+			var reg = /^(9C-|9D-)(\d{8,9})((-[123456789]){0,1})$/;
+			if (fzFileNo.match(reg) == null) {
+				alert("文号输入不规范，请输入受理通知书上文号。格式为：9C-123456789");
+				return;
+			}
+		} else {
+			var houseName = $("input[name='houseName']").val();
+			if (houseName == "") {
+				alert("请输入房地产名称");
+				return;
+			}
+			if (houseName.length > 200) {
+				alert("房地产名称长度最多200位");
+				return;
+			}
+			var proveType = $("input[name='proveType']").val();
+			if (proveType == "") {
+				alert("请选择权属证明类型");
+				return;
+			}
+			var proveCode = $("input[name='proveCode']").val();
+			if (proveCode == "") {
+				alert("请输入权属证明编号");
+				return;
+			}
+			if (proveCode.length > 100) {
+				alert("权属证明编号长度最多100位");
+				return;
+			}
+		}
+		var personName = $("input[name='personName']").val();
+		if (personName == "") {
+			alert("请输入申请人真实姓名");
+			return;
+		}
+		if (personName.length > 100) {
+			alert("姓名长度最多100个汉字");
+			return;
+		}
+		if (!/^[\u4e00-\u9fa5]+$/.test(personName)) {
+			alert("预约人姓名输入不规范");
+			return;
+		}
+		var phoneNumber = $("input[name='phoneNumber']").val();
+		if (phoneNumber == "") {
+			alert("请输入手机号");
+			return;
+		}
+		var reg = /^\d{11}$/;
+		if (!reg.test(phoneNumber)) {
+			alert("手机号格式不正确");
+			return;
+		}
+		var certificateNo = $("input[name='certificateNo']").val();
+		if (certificateNo == "") {
+			alert("请输入" + $(".certificate").html());
+			return;
+		}
+		var certificateType = $("input[name='certificateType']").val();
+		if (certificateType == "1" && !validIdCode(certificateNo)) {
+			return;
+		}
+		if (isTake == 1) {
+			var workDay = $("#workDay").val();
+			var workDayLabel = $("#workDayLabel").val();
+			var workTimeSoltOid = $("#workTimeSoltOid").val();
+			var workTimeSoltName = $("#workTimeSoltName").val();
+			if (workDay == "" || workDayLabel == "" || workTimeSoltOid == ""
+					|| workTimeSoltName == "") {
+				alert("请选择预约时间");
+				return;
+			}
+			if ($("#verificationcodereg").val() == "") {
+				alert("请输入验证码");
+				return;
+			}
+			showdiv("<img src='/loding.gif'><br><span style='color:#b8adb1'>正在预约，请稍等...</span>");
+		}
+		$("input[name='isTake']").val(isTake);
+		$.ajax({
+					url : "/mortgage/booking/v/save",
+					data : $("#myform").serialize(),
+					dataType : "json",
+					success : function(data) {
+						hidediv(" ");
+						//getAuthCode('authCode');
+						if (data.data != null) {
+							$("input[name='id']").val(data.data);
+						}
+						if (data.code == "SUCCESS") {
+							if (isTake == 0) {
+								alert("保存成功");
+								window.location.href = '#';
+							} else {
+								showdiv("<img src='/loding.gif'><br><span style='color:#b8adb1'>预约成功</span>");
+								hidediv(" ");
+								window.location.href = '/order/success.html';
+							}
+						} else {
+							var err = data.msg;
+							if (data.code == "FAIL") {
+								if (isTake == 0) {
+									err = $(".titles3").html() + "失败";
+								} else {
+									err = "预约失败，请稍后再试";
+								}
+							}
+							alert(err);
+						}
+					}
+				});
+	}
+	function getAuthCode(img) {
+		$.ajax({
+			url : "http://localhost:8080/xwdc-web/getValidateCode",
+			type : "POST",
+			dataType : "json",
+
+			// timeout: 1000,
+			error : function() {
+				
+			},
+			
+			success : function(data) {
+				if("10000" == data.head.code){
+					var rand = Math.random();
+					if (typeof img == 'string') {
+						var imgArr = document.getElementById(img);
+						imgArr.src = data.param.verification + "" + rand;
+					}else{
+						img.src = data.param.verification + "" + rand;
+					}
+				}
+				
+				if("E0006" == data.head.code){
+					alert(data.head.msg);
+				}
+			}
+		});
+	}
+</script>
+<script type="text/javascript" src="zhezhao.js"></script>
+<script type="text/javascript" src="idcard_valid.js"></script>
+</html>

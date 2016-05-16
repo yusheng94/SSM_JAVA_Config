@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xwdc.dao.ApplyInfoMapper">
+	<resultMap id="BaseResultMap" type="com.xwdc.domain.ApplyInfo">
+		<id column="ID" property="id" jdbcType="INTEGER" />
+		<result column="BOOKINGCODE" property="bookingcode" jdbcType="VARCHAR" />
+		<result column="PERSONNAME" property="personname" jdbcType="VARCHAR" />
+		<result column="PHONENUMBER" property="phonenumber" jdbcType="VARCHAR" />
+		<result column="CERTIFICATETYPENAME" property="certificatetypename"
+			jdbcType="VARCHAR" />
+		<result column="CERTIFICATENO" property="certificateno"
+			jdbcType="VARCHAR" />
+		<result column="REGISTRATIONAREAOID" property="registrationareaoid"
+			jdbcType="VARCHAR" />
+		<result column="REGISTRATIONAREANAME" property="registrationareaname"
+			jdbcType="VARCHAR" />
+		<result column="BOOKINGDATELABEL" property="bookingdatelabel"
+			jdbcType="VARCHAR" />
+		<result column="BOOKINGDATESTR" property="bookingdatestr"
+			jdbcType="VARCHAR" />
+		<result column="WORKTIMESOLTOID" property="worktimesoltoid"
+			jdbcType="VARCHAR" />
+		<result column="WORKTIMESOLT" property="worktimesolt" jdbcType="VARCHAR" />
+		<result column="STURTSNAME" property="sturtsname" jdbcType="VARCHAR" />
+		<result column="FZFILETR" property="fzfiletr" jdbcType="VARCHAR" />
+		<result column="BOOKINGTYPE" property="bookingtype" jdbcType="VARCHAR" />
+		<result column="BOOKINGTYPENAME" property="bookingtypename"
+			jdbcType="VARCHAR" />
+		<result column="BUSSNAME" property="bussname" jdbcType="VARCHAR" />
+		<result column="BOOKWEBUNIT" property="bookwebunit" jdbcType="VARCHAR" />
+		<result column="TEMPITEMNAME" property="tempitemname" jdbcType="VARCHAR" />
+		<result column="BOOKINGINFORMATIONOID" property="bookinginformationoid"
+			jdbcType="VARCHAR" />
+		<result column="USERNAME" property="username" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		ID, BOOKINGCODE, PERSONNAME, PHONENUMBER, CERTIFICATETYPENAME,
+		CERTIFICATENO, REGISTRATIONAREAOID,
+		REGISTRATIONAREANAME, BOOKINGDATELABEL, BOOKINGDATESTR, WORKTIMESOLTOID, WORKTIMESOLT,
+		STURTSNAME, FZFILETR, BOOKINGTYPE, BOOKINGTYPENAME, BUSSNAME,
+		BOOKWEBUNIT, TEMPITEMNAME,
+		BOOKINGINFORMATIONOID, USERNAME
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.math.BigDecimal">
+		select
+		<include refid="Base_Column_List" />
+		from TB_ApplyInfo
+		where ID = #{id,jdbcType=INTEGER}
+	</select>
+	<select id="selectAll" resultMap="BaseResultMap" parameterType="com.xwdc.domain.ApplyInfo">
+		select
+		<include refid="Base_Column_List" />
+		from TB_ApplyInfo
+		where CERTIFICATENO = #{certificateno,jdbcType=VARCHAR}
+		and PHONENUMBER = #{phonenumber,jdbcType=VARCHAR}
+	</select>
+	<select id="selectAllByUsername" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from TB_ApplyInfo
+		where USERNAME = #{username,jdbcType=VARCHAR}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="int">
+		delete from TB_ApplyInfo
+		where ID = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.xwdc.domain.ApplyInfo">
+		insert into TB_ApplyInfo (BOOKINGCODE, PERSONNAME,
+		PHONENUMBER, CERTIFICATETYPENAME, CERTIFICATENO,
+		REGISTRATIONAREAOID, REGISTRATIONAREANAME,
+		BOOKINGDATELABEL, BOOKINGDATESTR, WORKTIMESOLTOID,
+		WORKTIMESOLT, STURTSNAME, FZFILETR,
+		BOOKINGTYPE, BOOKINGTYPENAME, BUSSNAME,
+		BOOKWEBUNIT, TEMPITEMNAME, BOOKINGINFORMATIONOID,
+		USERNAME)
+		values (#{bookingcode,jdbcType=VARCHAR},
+		#{personname,jdbcType=VARCHAR},
+		#{phonenumber,jdbcType=VARCHAR}, #{certificatetypename,jdbcType=VARCHAR},
+		#{certificateno,jdbcType=VARCHAR},
+		#{registrationareaoid,jdbcType=VARCHAR},
+		#{registrationareaname,jdbcType=VARCHAR},
+		#{bookingdatelabel,jdbcType=VARCHAR},
+		#{bookingdatestr,jdbcType=VARCHAR},
+		#{worktimesoltoid,jdbcType=VARCHAR},
+		#{worktimesolt,jdbcType=VARCHAR}, #{sturtsname,jdbcType=VARCHAR}, #{fzfiletr,jdbcType=VARCHAR},
+		#{bookingtype,jdbcType=VARCHAR}, #{bookingtypename,jdbcType=VARCHAR},
+		#{bussname,jdbcType=VARCHAR},
+		#{bookwebunit,jdbcType=VARCHAR}, #{tempitemname,jdbcType=VARCHAR},
+		#{bookinginformationoid,jdbcType=VARCHAR},
+		#{username,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.xwdc.domain.ApplyInfo">
+		insert into TB_ApplyInfo
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				seq_tb_ApplyInfo.nextval,
+			</if>
+			<if test="bookingcode != null">
+				BOOKINGCODE,
+			</if>
+			<if test="personname != null">
+				PERSONNAME,
+			</if>
+			<if test="phonenumber != null">
+				PHONENUMBER,
+			</if>
+			<if test="certificatetypename != null">
+				CERTIFICATETYPENAME,
+			</if>
+			<if test="certificateno != null">
+				CERTIFICATENO,
+			</if>
+			<if test="registrationareaoid != null">
+				REGISTRATIONAREAOID,
+			</if>
+			<if test="registrationareaname != null">
+				REGISTRATIONAREANAME,
+			</if>
+			<if test="bookingdatelabel != null">
+				BOOKINGDATELABEL,
+			</if>
+			<if test="bookingdatestr != null">
+				BOOKINGDATESTR,
+			</if>
+			<if test="worktimesoltoid != null">
+				WORKTIMESOLTOID,
+			</if>
+			<if test="worktimesolt != null">
+				WORKTIMESOLT,
+			</if>
+			<if test="sturtsname != null">
+				STURTSNAME,
+			</if>
+			<if test="fzfiletr != null">
+				FZFILETR,
+			</if>
+			<if test="bookingtype != null">
+				BOOKINGTYPE,
+			</if>
+			<if test="bookingtypename != null">
+				BOOKINGTYPENAME,
+			</if>
+			<if test="bussname != null">
+				BUSSNAME,
+			</if>
+			<if test="bookwebunit != null">
+				BOOKWEBUNIT,
+			</if>
+			<if test="tempitemname != null">
+				TEMPITEMNAME,
+			</if>
+			<if test="bookinginformationoid != null">
+				BOOKINGINFORMATIONOID,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="bookingcode != null">
+				#{bookingcode,jdbcType=VARCHAR},
+			</if>
+			<if test="personname != null">
+				#{personname,jdbcType=VARCHAR},
+			</if>
+			<if test="phonenumber != null">
+				#{phonenumber,jdbcType=VARCHAR},
+			</if>
+			<if test="certificatetypename != null">
+				#{certificatetypename,jdbcType=VARCHAR},
+			</if>
+			<if test="certificateno != null">
+				#{certificateno,jdbcType=VARCHAR},
+			</if>
+			<if test="registrationareaoid != null">
+				#{registrationareaoid,jdbcType=VARCHAR},
+			</if>
+			<if test="registrationareaname != null">
+				#{registrationareaname,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingdatelabel != null">
+				#{bookingdatelabel,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingdatestr != null">
+				#{bookingdatestr,jdbcType=VARCHAR},
+			</if>
+			<if test="worktimesoltoid != null">
+				#{worktimesoltoid,jdbcType=VARCHAR},
+			</if>
+			<if test="worktimesolt != null">
+				#{worktimesolt,jdbcType=VARCHAR},
+			</if>
+			<if test="sturtsname != null">
+				#{sturtsname,jdbcType=VARCHAR},
+			</if>
+			<if test="fzfiletr != null">
+				#{fzfiletr,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingtype != null">
+				#{bookingtype,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingtypename != null">
+				#{bookingtypename,jdbcType=VARCHAR},
+			</if>
+			<if test="bussname != null">
+				#{bussname,jdbcType=VARCHAR},
+			</if>
+			<if test="bookwebunit != null">
+				#{bookwebunit,jdbcType=VARCHAR},
+			</if>
+			<if test="tempitemname != null">
+				#{tempitemname,jdbcType=VARCHAR},
+			</if>
+			<if test="bookinginformationoid != null">
+				#{bookinginformationoid,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.xwdc.domain.ApplyInfo">
+		update TB_ApplyInfo
+		<set>
+			<if test="bookingcode != null">
+				BOOKINGCODE = #{bookingcode,jdbcType=VARCHAR},
+			</if>
+			<if test="personname != null">
+				PERSONNAME = #{personname,jdbcType=VARCHAR},
+			</if>
+			<if test="phonenumber != null">
+				PHONENUMBER = #{phonenumber,jdbcType=VARCHAR},
+			</if>
+			<if test="certificatetypename != null">
+				CERTIFICATETYPENAME = #{certificatetypename,jdbcType=VARCHAR},
+			</if>
+			<if test="certificateno != null">
+				CERTIFICATENO = #{certificateno,jdbcType=VARCHAR},
+			</if>
+			<if test="registrationareaoid != null">
+				REGISTRATIONAREAOID = #{registrationareaoid,jdbcType=VARCHAR},
+			</if>
+			<if test="registrationareaname != null">
+				REGISTRATIONAREANAME = #{registrationareaname,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingdatelabel != null">
+				BOOKINGDATELABEL = #{bookingdatelabel,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingdatestr != null">
+				BOOKINGDATESTR = #{bookingdatestr,jdbcType=VARCHAR},
+			</if>
+			<if test="worktimesoltoid != null">
+				WORKTIMESOLTOID = #{worktimesoltoid,jdbcType=VARCHAR},
+			</if>
+			<if test="worktimesolt != null">
+				WORKTIMESOLT = #{worktimesolt,jdbcType=VARCHAR},
+			</if>
+			<if test="sturtsname != null">
+				STURTSNAME = #{sturtsname,jdbcType=VARCHAR},
+			</if>
+			<if test="fzfiletr != null">
+				FZFILETR = #{fzfiletr,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingtype != null">
+				BOOKINGTYPE = #{bookingtype,jdbcType=VARCHAR},
+			</if>
+			<if test="bookingtypename != null">
+				BOOKINGTYPENAME = #{bookingtypename,jdbcType=VARCHAR},
+			</if>
+			<if test="bussname != null">
+				BUSSNAME = #{bussname,jdbcType=VARCHAR},
+			</if>
+			<if test="bookwebunit != null">
+				BOOKWEBUNIT = #{bookwebunit,jdbcType=VARCHAR},
+			</if>
+			<if test="tempitemname != null">
+				TEMPITEMNAME = #{tempitemname,jdbcType=VARCHAR},
+			</if>
+			<if test="bookinginformationoid != null">
+				BOOKINGINFORMATIONOID = #{bookinginformationoid,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateBybookingInformationOid" parameterType="com.xwdc.domain.ApplyInfo">
+		update TB_ApplyInfo
+		set STURTSNAME = #{sturtsname,jdbcType=VARCHAR}
+		where BOOKINGINFORMATIONOID = #{bookinginformationoid,jdbcType=VARCHAR}
+
+	</update>
+
+	<update id="updateByPrimaryKey" parameterType="com.xwdc.domain.ApplyInfo">
+		update TB_ApplyInfo
+		set BOOKINGCODE = #{bookingcode,jdbcType=VARCHAR},
+		PERSONNAME = #{personname,jdbcType=VARCHAR},
+		PHONENUMBER = #{phonenumber,jdbcType=VARCHAR},
+		CERTIFICATETYPENAME = #{certificatetypename,jdbcType=VARCHAR},
+		CERTIFICATENO = #{certificateno,jdbcType=VARCHAR},
+		REGISTRATIONAREAOID = #{registrationareaoid,jdbcType=VARCHAR},
+		REGISTRATIONAREANAME = #{registrationareaname,jdbcType=VARCHAR},
+		BOOKINGDATELABEL = #{bookingdatelabel,jdbcType=VARCHAR},
+		BOOKINGDATESTR = #{bookingdatestr,jdbcType=VARCHAR},
+		WORKTIMESOLTOID = #{worktimesoltoid,jdbcType=VARCHAR},
+		WORKTIMESOLT = #{worktimesolt,jdbcType=VARCHAR},
+		STURTSNAME = #{sturtsname,jdbcType=VARCHAR},
+		FZFILETR = #{fzfiletr,jdbcType=VARCHAR},
+		BOOKINGTYPE = #{bookingtype,jdbcType=VARCHAR},
+		BOOKINGTYPENAME = #{bookingtypename,jdbcType=VARCHAR},
+		BUSSNAME = #{bussname,jdbcType=VARCHAR},
+		BOOKWEBUNIT = #{bookwebunit,jdbcType=VARCHAR},
+		TEMPITEMNAME = #{tempitemname,jdbcType=VARCHAR},
+		BOOKINGINFORMATIONOID = #{bookinginformationoid,jdbcType=VARCHAR}
+		where ID = #{id,jdbcType=INTEGER}
+	</update>
+
+</mapper>

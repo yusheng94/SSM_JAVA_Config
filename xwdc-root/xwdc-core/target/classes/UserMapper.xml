@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xwdc.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.xwdc.domain.User" >
+    <id column="USID" property="usid"/>
+    <result column="USERNANME" property="userNanme"/>
+    <result column="PASSWORD" property="password" />
+    <result column="NAME" property="name" />
+    <result column="ADDRESS" property="address"/>
+    <result column="USEX" property="usex"/>
+    <result column="IDCAR" property="idcar"/>
+    <result column="QUESTION" property="question"/>
+  </resultMap>
+  <resultMap type="com.xwdc.domain.User" id="ResultMap">
+  	<result column="USERNANME" property="userNanme"/>
+    <result column="PASSWORD" property="password" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xwdc.domain.User" >
+    insert into TB_USERS (USERNAME, PASSWORD, 
+      NAME, ADDRESS, USEX, 
+      IDCAR, QUESTION)
+    values (#{userName}, #{password}, 
+      #{name}, #{address}, #{usex}, 
+      #{idcar}, #{question})
+  </insert>
+  <sql id="Base_Column_List" >
+    USID, USERNAME, PASSWORD, NAME, ADDRESS, USEX, IDCAR, QUESTION
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="int" >
+    select 
+    <include refid="Base_Column_List" />
+    from TB_USERS
+    where USID = #{usid,jdbcType=INTEGER}
+  </select>
+  <select id="selectUserName" resultType="java.lang.String" parameterType="java.lang.String" >
+    select USERNAME
+    from TB_USERS
+    where USERNAME = #{userName}
+  </select>
+   <select id="select" resultType="java.lang.String" parameterType="com.xwdc.domain.User"  >
+    select USERNAME
+    from TB_USERS
+    where USERNAME = #{userName} and PASSWORD = #{password}
+  </select>
+  <select id="selectQuestion" resultType="java.lang.String" parameterType="com.xwdc.domain.User" >
+    select USERNAME
+    from TB_USERS
+    where USERNAME = #{userName} and QUESTION=#{question}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="int" >
+    delete from TB_USERS
+    where USID = #{usid,jdbcType=INTEGER}
+  </delete>
+  <delete id="delete" parameterType="java.lang.String" >
+    delete PASSWORD from TB_USERS
+    where USERNAME= #{userName}
+  </delete>
+  <insert id="insertSelective" parameterType="com.xwdc.domain.User" >
+    insert into TB_USERS
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="usid != null" >
+        USID,
+      </if>
+      <if test="userName != null" >
+        USERNANE,
+      </if>
+      <if test="password != null" >
+        PASSWORD,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="address != null" >
+        ADDRESS,
+      </if>
+      <if test="usex != null" >
+        USEX,
+      </if>
+      <if test="idcar != null" >
+        IDCAR,
+      </if>
+      <if test="question != null" >
+        QUESTION,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="usid != null" >
+        #{usid,jdbcType=INTEGER},
+      </if>
+      <if test="usernane != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="usex != null" >
+        #{usex,jdbcType=VARCHAR},
+      </if>
+      <if test="idcar != null" >
+        #{idcar,jdbcType=VARCHAR},
+      </if>
+      <if test="question != null" >
+        #{question,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xwdc.domain.User" >
+    update TB_USERS
+    <set >
+      <if test="usernane != null" >
+        USERNAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        PASSWORD = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        ADDRESS = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="usex != null" >
+        USEX = #{usex,jdbcType=VARCHAR},
+      </if>
+      <if test="idcar != null" >
+        IDCAR = #{idcar,jdbcType=VARCHAR},
+      </if>
+      <if test="question != null" >
+        QUESTION = #{question,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where USID = #{usid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xwdc.domain.User" >
+    update TB_USERS
+    set USERNANE = #{userName,jdbcType=VARCHAR},
+      PASSWORD = #{password,jdbcType=VARCHAR},
+      NAME = #{name,jdbcType=VARCHAR},
+      ADDRESS = #{address,jdbcType=VARCHAR},
+      USEX = #{usex,jdbcType=VARCHAR},
+      IDCAR = #{idcar,jdbcType=VARCHAR},
+      QUESTION = #{question,jdbcType=VARCHAR}
+    where USID = #{usid,jdbcType=INTEGER}
+  </update>
+  <update id="updatePassword" parameterType="com.xwdc.domain.User" >
+    update TB_USERS
+    set PASSWORD = #{password}
+    where USERNAME = #{userName}
+  </update>
+</mapper>
